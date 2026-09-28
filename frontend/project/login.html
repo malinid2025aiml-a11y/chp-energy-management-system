@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micro-CHP | Energy Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
+          </svg>
+        </div>
+        <h1>MICRO-CHP</h1>
+        <p class="login-subtitle">Energy Management System</p>
+        <p class="login-tagline">Hydrogen Fuel Cell Micro-CHP &amp; Building Heat Cogeneration</p>
+      </div>
+
+      <form id="loginForm" class="login-form" autocomplete="off">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+        </div>
+
+        <div id="loginError" class="login-error" style="display:none;">Invalid username or password</div>
+
+        <button type="submit" class="login-btn">Sign In</button>
+      </form>
+
+      <div class="login-demo-hint">
+        <p>Demo credentials &mdash; admin / admin123</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

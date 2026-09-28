@@ -1,0 +1,6 @@
+backend/target/
+backend/.mvn/
+.vscode/
+*.class
+*.log
+.DS_Store

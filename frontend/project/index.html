@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micro-CHP | Energy Management System</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
+          </svg>
+        </div>
+        <div class="sidebar-title">
+          <span class="sidebar-brand">MICRO-CHP</span>
+          <span class="sidebar-sub">Energy Management</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-section="dashboard">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-btn" data-section="units">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="7" y1="17" x2="7" y2="17"/></svg>
+          <span>CHP Units</span>
+        </button>
+        <button class="nav-btn" data-section="contacts">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Contacts</span>
+        </button>
+        <button class="nav-btn" data-section="telemetry">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span>Telemetry</span>
+        </button>
+        <button class="nav-btn" data-section="purchases">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span>Purchases</span>
+        </button>
+        <button class="nav-btn" data-section="invoices">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Invoices</span>
+        </button>
+        <button class="nav-btn" data-section="accounting">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          <span>Accounting</span>
+        </button>
+        <button class="nav-btn" data-section="budget">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Budget</span>
+        </button>
+        <button class="nav-btn" data-section="reports">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          <span>Reports</span>
+        </button>
+        <button class="nav-btn nav-logout" id="logoutBtn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Logout</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h2 id="pageTitle">Dashboard</h2>
+        <div class="topbar-status" id="backendStatus">
+          <span class="status-dot"></span>
+          <span id="statusText">Connecting&hellip;</span>
+        </div>
+      </header>
+
+      <div class="content-area">
+
+        <!-- ============ DASHBOARD ============ -->
+        <section id="section-dashboard" class="page-section active">
+          <div class="dashboard-grid" id="dashboardCards">
+            <div class="dash-card" data-key="units"><p class="dash-label">Total CHP Units</p><p class="dash-value" id="dashUnits">&mdash;</p></div>
+            <div class="dash-card" data-key="contacts"><p class="dash-label">Total Contacts</p><p class="dash-value" id="dashContacts">&mdash;</p></div>
+            <div class="dash-card" data-key="telemetry"><p class="dash-label">Telemetry Records</p><p class="dash-value" id="dashTelemetry">&mdash;</p></div>
+            <div class="dash-card" data-key="purchases"><p class="dash-label">Hydrogen Purchases</p><p class="dash-value" id="dashPurchases">&mdash;</p></div>
+            <div class="dash-card" data-key="invoices"><p class="dash-label">Customer Invoices</p><p class="dash-value" id="dashInvoices">&mdash;</p></div>
+            <div class="dash-card dash-accent" data-key="revenue"><p class="dash-label">Total Revenue</p><p class="dash-value" id="dashRevenue">&mdash;</p></div>
+            <div class="dash-card dash-warn" data-key="cost"><p class="dash-label">Total Hydrogen Purchase Cost</p><p class="dash-value" id="dashCost">&mdash;</p></div>
+          </div>
+          <div class="dashboard-actions">
+            <button class="btn btn-primary" onclick="loadDashboard()">Refresh Dashboard</button>
+          </div>
+        </section>
+
+        <!-- ============ CHP UNITS ============ -->
+        <section id="section-units" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add CHP Unit</h3>
+              <form id="unitForm" class="entity-form">
+                <div class="form-group"><label>Unit Name</label><input name="unitName" type="text" required /></div>
+                <div class="form-group"><label>Location</label><input name="location" type="text" required /></div>
+                <div class="form-group"><label>Electricity Capacity</label><input name="electricityCapacity" type="number" step="any" required /></div>
+                <div class="form-group"><label>Heat Capacity</label><input name="heatCapacity" type="number" step="any" required /></div>
+                <div class="form-group"><label>Heat-to-Power Ratio</label><input name="heatToPowerRatio" type="number" step="any" required /></div>
+                <div class="form-group"><label>Electricity Tariff</label><input name="electricityTariff" type="number" step="any" required /></div>
+                <div class="form-group"><label>Heat Tariff</label><input name="heatTariff" type="number" step="any" required /></div>
+                <div class="form-group"><label>Status</label><select name="status" required><option value="ACTIVE">ACTIVE</option><option value="INACTIVE">INACTIVE</option><option value="MAINTENANCE">MAINTENANCE</option></select></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add Unit</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('unitForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="unitMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">CHP Units</h3>
+                <button class="btn btn-sm" onclick="loadTable('units')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="unitsTable"><thead><tr><th>ID</th><th>Unit Name</th><th>Location</th><th>Electricity Cap</th><th>Heat Cap</th><th>H:P Ratio</th><th>Elec Tariff</th><th>Heat Tariff</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ CONTACTS ============ -->
+        <section id="section-contacts" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add Contact</h3>
+              <form id="contactForm" class="entity-form">
+                <div class="form-group"><label>Name</label><input name="name" type="text" required /></div>
+                <div class="form-group"><label>Type</label><select name="type" required><option value="CUSTOMER">CUSTOMER</option><option value="VENDOR">VENDOR</option></select></div>
+                <div class="form-group"><label>Address</label><input name="address" type="text" required /></div>
+                <div class="form-group"><label>Phone</label><input name="phone" type="text" required /></div>
+                <div class="form-group"><label>Email</label><input name="email" type="email" required /></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add Contact</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('contactForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="contactMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Contacts</h3>
+                <button class="btn btn-sm" onclick="loadTable('contacts')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="contactsTable"><thead><tr><th>ID</th><th>Name</th><th>Type</th><th>Address</th><th>Phone</th><th>Email</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ TELEMETRY ============ -->
+        <section id="section-telemetry" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add Telemetry Reading</h3>
+              <form id="telemetryForm" class="entity-form">
+                <div class="form-group"><label>CHP Unit ID</label><input name="chpUnitId" type="number" required /></div>
+                <div class="form-group"><label>Electricity (kWh)</label><input name="electricityKwh" type="number" step="any" required /></div>
+                <div class="form-group"><label>Heat (GJ)</label><input name="heatGj" type="number" step="any" required /></div>
+                <div class="form-group"><label>Hydrogen Used (kg)</label><input name="hydrogenUsedKg" type="number" step="any" required /></div>
+                <div class="form-group"><label>Reading Time</label><input name="readingTime" type="datetime-local" required /></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add Reading</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('telemetryForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="telemetryMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Telemetry Records</h3>
+                <button class="btn btn-sm" onclick="loadTable('telemetry')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="telemetryTable"><thead><tr><th>ID</th><th>CHP Unit ID</th><th>Electricity (kWh)</th><th>Heat (GJ)</th><th>Hydrogen Used (kg)</th><th>Reading Time</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ PURCHASES ============ -->
+        <section id="section-purchases" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add Hydrogen Purchase</h3>
+              <form id="purchaseForm" class="entity-form">
+                <div class="form-group"><label>Supplier ID</label><input name="supplierId" type="number" required /></div>
+                <div class="form-group"><label>Purchase Order Number</label><input name="purchaseOrderNumber" type="text" required /></div>
+                <div class="form-group"><label>Hydrogen Quantity (kg)</label><input name="hydrogenQuantityKg" type="number" step="any" required oninput="calcPurchase()" /></div>
+                <div class="form-group"><label>Price per kg</label><input name="pricePerKg" type="number" step="any" required oninput="calcPurchase()" /></div>
+                <div class="form-group"><label>Total Amount</label><input name="totalAmount" type="number" step="any" required /></div>
+                <div class="form-group"><label>Vendor Bill Number</label><input name="vendorBillNumber" type="text" required /></div>
+                <div class="form-group"><label>Payment Status</label><select name="paymentStatus" required><option value="PENDING">PENDING</option><option value="PAID">PAID</option><option value="CANCELLED">CANCELLED</option></select></div>
+                <div class="form-group"><label>Purchase Date</label><input name="purchaseDate" type="date" required /></div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" onclick="calcPurchase()">Calculate</button>
+                  <button type="submit" class="btn btn-primary">Add Purchase</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('purchaseForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="purchaseMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Hydrogen Purchases</h3>
+                <button class="btn btn-sm" onclick="loadTable('purchases')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="purchasesTable"><thead><tr><th>ID</th><th>Supplier ID</th><th>PO Number</th><th>H2 Qty (kg)</th><th>Price/kg</th><th>Total Amount</th><th>Vendor Bill</th><th>Payment Status</th><th>Purchase Date</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ INVOICES ============ -->
+        <section id="section-invoices" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Create Customer Invoice</h3>
+              <form id="invoiceForm" class="entity-form">
+                <div class="form-group"><label>Customer ID</label><input name="customerId" type="number" required /></div>
+                <div class="form-group"><label>Electricity (kWh)</label><input name="electricityKwh" type="number" step="any" required oninput="calcInvoice()" /></div>
+                <div class="form-group"><label>Heat (GJ)</label><input name="heatGj" type="number" step="any" required oninput="calcInvoice()" /></div>
+                <div class="form-group"><label>Electricity Rate</label><input name="electricityRate" type="number" step="any" required oninput="calcInvoice()" /></div>
+                <div class="form-group"><label>Heat Rate</label><input name="heatRate" type="number" step="any" required oninput="calcInvoice()" /></div>
+                <div class="form-group"><label>Electricity Amount</label><input name="electricityAmount" type="number" step="any" required /></div>
+                <div class="form-group"><label>Heat Amount</label><input name="heatAmount" type="number" step="any" required /></div>
+                <div class="form-group"><label>Total Amount</label><input name="totalAmount" type="number" step="any" required /></div>
+                <div class="form-group"><label>Payment Status</label><select name="paymentStatus" required><option value="PENDING">PENDING</option><option value="PAID">PAID</option><option value="OVERDUE">OVERDUE</option></select></div>
+                <div class="form-group"><label>Invoice Date</label><input name="invoiceDate" type="date" required /></div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" onclick="calcInvoice()">Calculate</button>
+                  <button type="submit" class="btn btn-primary">Create Invoice</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('invoiceForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="invoiceMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Customer Invoices</h3>
+                <button class="btn btn-sm" onclick="loadTable('invoices')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="invoicesTable"><thead><tr><th>ID</th><th>Customer ID</th><th>Elec kWh</th><th>Heat GJ</th><th>Elec Rate</th><th>Heat Rate</th><th>Elec Amount</th><th>Heat Amount</th><th>Total</th><th>Status</th><th>Invoice Date</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ACCOUNTING ============ -->
+        <section id="section-accounting" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add Journal Entry</h3>
+              <form id="accountForm" class="entity-form">
+                <div class="form-group"><label>Account Code</label><input name="accountCode" type="number" step="any" required /></div>
+                <div class="form-group"><label>Account Name</label><input name="accountName" type="text" required /></div>
+                <div class="form-group"><label>Account Type</label><select name="accountType" required><option value="ASSET">ASSET</option><option value="LIABILITY">LIABILITY</option><option value="INCOME">INCOME</option><option value="EXPENSE">EXPENSE</option></select></div>
+                <div class="form-group"><label>Debit</label><input name="debit" type="number" step="any" required /></div>
+                <div class="form-group"><label>Credit</label><input name="credit" type="number" step="any" required /></div>
+                <div class="form-group"><label>Journal Type</label><select name="journalType" required><option value="SALES">SALES</option><option value="PURCHASE">PURCHASE</option><option value="BANK">BANK</option></select></div>
+                <div class="form-group"><label>Reference</label><input name="reference" type="text" required /></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add Entry</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('accountForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="accountMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Journal Entries</h3>
+                <button class="btn btn-sm" onclick="loadTable('accounts')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="accountsTable"><thead><tr><th>ID</th><th>Account Code</th><th>Account Name</th><th>Account Type</th><th>Debit</th><th>Credit</th><th>Journal Type</th><th>Reference</th></tr></thead><tbody></tbody></table></div>
+              <div class="totals-row" id="accountTotals"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ BUDGET ============ -->
+        <section id="section-budget" class="page-section">
+          <div class="section-grid">
+            <div class="card form-card">
+              <h3 class="card-title">Add Budget Entry</h3>
+              <form id="budgetForm" class="entity-form">
+                <div class="form-group"><label>CHP Unit ID</label><input name="chpUnitId" type="number" required /></div>
+                <div class="form-group"><label>Analytic Account</label><input name="analyticAccount" type="text" required /></div>
+                <div class="form-group"><label>Planned Hydrogen Cost</label><input name="plannedHydrogenCost" type="number" step="any" required /></div>
+                <div class="form-group"><label>Actual Hydrogen Cost</label><input name="actualHydrogenCost" type="number" step="any" required /></div>
+                <div class="form-group"><label>Planned Revenue</label><input name="plannedRevenue" type="number" step="any" required /></div>
+                <div class="form-group"><label>Actual Revenue</label><input name="actualRevenue" type="number" step="any" required /></div>
+                <div class="form-group"><label>Variance</label><input name="variance" type="number" step="any" required /></div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Add Budget</button>
+                  <button type="button" class="btn btn-ghost" onclick="clearForm('budgetForm')">Clear</button>
+                </div>
+              </form>
+              <div class="form-msg" id="budgetMsg"></div>
+            </div>
+            <div class="card table-card">
+              <div class="card-header">
+                <h3 class="card-title">Budget Entries</h3>
+                <button class="btn btn-sm" onclick="loadTable('budgets')">Refresh</button>
+              </div>
+              <div class="table-wrap"><table id="budgetsTable"><thead><tr><th>ID</th><th>CHP Unit ID</th><th>Analytic Account</th><th>Planned H2 Cost</th><th>Actual H2 Cost</th><th>Planned Revenue</th><th>Actual Revenue</th><th>Variance</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ REPORTS ============ -->
+        <section id="section-reports" class="page-section">
+          <div class="reports-layout">
+            <div class="card report-card">
+              <div class="card-header">
+                <h3 class="card-title">Profit &amp; Loss</h3>
+                <button class="btn btn-sm" onclick="loadReport('pnl')">Load</button>
+              </div>
+              <pre class="report-output" id="reportPnl">Click "Load" to fetch the report.</pre>
+            </div>
+            <div class="card report-card">
+              <div class="card-header">
+                <h3 class="card-title">Balance Sheet</h3>
+                <button class="btn btn-sm" onclick="loadReport('balance-sheet')">Load</button>
+              </div>
+              <pre class="report-output" id="reportBalanceSheet">Click "Load" to fetch the report.</pre>
+            </div>
+            <div class="card report-card">
+              <div class="card-header">
+                <h3 class="card-title">Budget Report</h3>
+                <button class="btn btn-sm" onclick="loadReport('budget')">Load</button>
+              </div>
+              <pre class="report-output" id="reportBudget">Click "Load" to fetch the report.</pre>
+            </div>
+            <div class="reports-actions">
+              <button class="btn btn-primary" onclick="loadAllReports()">Refresh Reports</button>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /content-area -->
+    </main>
+  </div><!-- /app-layout -->
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

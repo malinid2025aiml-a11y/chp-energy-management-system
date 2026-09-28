@@ -1,0 +1,8 @@
+{
+  "name": "micro-chp-frontend",
+  "version": "1.0.0",
+  "description": "Hydrogen Fuel Cell Micro-CHP & Building Heat Cogeneration Network - Static Frontend",
+  "scripts": {
+    "build": "echo 'Build successful - static project, no compilation needed.'"
+  }
+}
